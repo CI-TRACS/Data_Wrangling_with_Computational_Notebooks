@@ -6,16 +6,16 @@ This repository generates the corresponding lesson website from [The Carpentries
 
 ## Summary
 
-**Synopsis:** Introduction to Python and Pandas for cleaning and wrangling data climate datasets using Jupyter notebooks on the Mana HPC for exploratory research and reproducible analysis.
+**Synopsis:** Introduction to Python and Pandas for cleaning and wrangling climate datasets using Jupyter notebooks for exploratory research and reproducible analysis.
 
 **Learning Outcomes:**
 
-- Demonstrate the ability to take exemplar climate change data and build Jupyter notebooks on Mana to conduct cleaning and wrangling of the data.
+- Understand how to use notebooks to clean and wrangle climatological data
+- Understand how to combined code and documentation to allow for reproducible analyses
 
 **CI Tools:**
 
 - Python
-- R
 - Jupyter
 - Pandas
 
@@ -38,7 +38,7 @@ Look for the tag ![good_first_issue](https://img.shields.io/badge/-good%20first%
 
 Current maintainers of this lesson are:
 
-* Oscar Ramfelt
+- Oscar Ramfelt
 
 ## Authors
 
