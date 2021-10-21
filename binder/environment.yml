@@ -1,0 +1,8 @@
+name: data-wrangling-environment
+channels:
+  - conda-forge
+  - defaults
+dependencies:
+  - numpy
+  - matplotlib
+  - pandas
