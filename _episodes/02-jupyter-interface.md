@@ -75,7 +75,7 @@ To show the dangers of rerunning cells we can try rerunning the two bottom cells
 
 > ## Rerunning Cells
 >
-> Rerunning code cells will erase the output of that code cell and update the counter next to the cell with the most recent time the cell was run. 
+> Rerunning code cells will erase the output of that code cell and update the counter next to the cell with the most recent time the cell was run.
 >
 {: .callout}
 

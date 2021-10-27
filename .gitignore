@@ -17,3 +17,6 @@ vendor/
 Gemfile.lock
 .*history
 .markdownlint.json
+
+# Data files to be left out
+new_spending_data.csv
