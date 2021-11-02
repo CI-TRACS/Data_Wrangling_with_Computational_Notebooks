@@ -14,6 +14,8 @@ keypoints:
   - "Pandas contains numerous methods to help load/write data to/from files of different types"
 ---
 
+[![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CI-TRACS/Data_Wrangling_with_Computational_Notebooks/HEAD)
+
 ## Pandas Data Structures
 
 For this episode you should follow along inside the Jupyter notebook associated with this episode. The jupyter notebooks for this entire lesson can be found in Binder ([Link to lesson's Binder website](https://mybinder.org/v2/gh/CI-TRACS/Data_Wrangling_with_Computational_Notebooks/HEAD)). You will have to navigate to the "notebook" directory in the file browser to find the notebook associated with this episode.
@@ -40,7 +42,7 @@ When creating a `Series` pandas will store all the data as the same type. The ma
 | Python Type       | Equivalent `pandas` Type | Description                                                                                                        |
 | :---------------- | :----------------------- | :----------------------------------------------------------------------------------------------------------------- |
 | `string or mixed` | `object`                 | Columns contain partially or completely made up from strings                                                       |
-| `int`             | `int64`                  | Columns with numeric (inetger) values. The 64 here referes <br/>to size of the memory space allocated to this type |
+| `int`             | `int64`                  | Columns with numeric (inetger) values. The 64 here refers <br/>to size of the memory space allocated to this type |
 | `float`           | `float64`                | Columns with floating points numbers (numbers with decimal points)                                                 |
 | `bool`            | `bool`                   | True/False values                                                                                                  |
 
@@ -58,9 +60,10 @@ You can create `DataFrames` from either loading in a file e.g. a csv file or by 
 
 Before we can load in data from a file we need to load the `pandas` package. Pandas is often imported alongside `as pd` to reduce the amount of characters needed to use the different methods within it.
 
-```Python
+~~~
 import pandas as pd
-```
+~~~
+{: .language-python}
 
 ### Loading and Parsing Data
 
@@ -68,14 +71,23 @@ Pandas can load in data from a variety of file formats. However, in most cases y
 
 To store data in a plain text file you need a standard way of distinguishing the individual data entries. For example, suppose a file contained the following text:
 
-```txt
+~~~
 ,column1,column2,column3,
 row1,a,b,c
 row2,d,e,f
 row3,g,h,i
-```
+~~~
+{: .output}
 
-A human would see the text above and may be able to discern the 3 columns and 3 rows and the individual data entries. A computer would have no idea how to parse this without any direction; to a computer the text above is just one string of characters. To help the computer parse the text, we could tell it that each data entry is separated by a column and each row is separate by a new line. This way of organizing data is called a plain text file format.
+A human would see the text above and may be able to discern the 3 columns and 3 rows and the individual data entries and see that the file contains a table that looks like the one below.
+
+|      | column 1 | column 2 | column 3 |
+| ---- | -------- | -------- | -------- |
+| row1 | a        | b        | c        |
+| row2 | d        | e        | f        |
+| row3 | g        | h        | i        |
+
+However, a computer would have no idea how to parse this without any direction; to a computer the text above is just one string of characters. To help the computer parse the text, we could tell it that each data entry is separated by a column and each row is separate by a new line. This way of organizing data is called a plain text file format.
 
 Most of the plain text file formats fall into one of the following two categories: **Delimited** and **Fixed Width**
 
@@ -90,17 +102,19 @@ However, when parsing plain text files can become a complicated procedure. To ai
 
 By default `read_csv()` will separate data entries when it sees commas and will separate rows by new lines, which is encoded by: '\n'. If we wanted to change this behavior so that `read_csv()` separates by tabs (encoded with \t), then we can set the optional parameter `sep = '\t'`. For instance, if we wanted to read the data in the file 'spending_csv_ex.tsv', which is a tab separated values file, and save the data in a pandas `DataFrame` called `df`, then we would type:
 
-```Python
+~~~
 df = pd.read_csv('Data/spending_csv_ex.tsv', sep='\t')
-```
+~~~
+{: .language-python}
 
 Though `read_csv()` can handle `.tsv` files, there is a specific parsing function for `.tsv` files: `read_table()`. The difference between `read_table()` and `read_csv()` is that the default behavior for the latter is to separate using commas instead of tabs `\t`. The `read_table()` documentation is available at this [link](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_table.html).
 
 To perform the same operation (that is reading the data in the file `spending_csv_ex.tsv` and save the data in a pandas `DataFrame` called `df`), we may use the `read_table()` function without having to define our delimiter, since the default parameters will correctly parse our file.
 
-```Python
+~~~
 df = pd.read_table('Data/spending_csv_ex.tsv')
-```
+~~~
+{: .language-python}
 
 Both methods will lead to an equivalent `DataFrame`.
 
@@ -108,10 +122,11 @@ In the previous examples we loaded the entire dataset from the file we gave Pand
 
 To load only up to a limited number of rows we can use the `nrows` parameter for both `read_table()` and `read_csv()`. For example, the file E3_tara_w1.csv is a csv file with over 200 rows, but if we wanted to read only the first 5 rows of this file we can call the pandas `read_csv()` function and set `nrows = 5`:
 
-```Python
+~~~
 df = pd.read_csv('data/spending_csv_ex.csv', nrows=5)
 df.shape # Returns the number of rows and columns of the DataFrame 'df' (rows, columns)
-```
+~~~
+{: .language-python}
 
 We see that the `DataFrame` `df`, that we saved the data in, has a shape attribute of `df.shape=(5,6)`. This means that there are 5 rows (since we set `nrows=5`) and 6 columns (all the columns of the dataset).
 
@@ -119,9 +134,10 @@ We see that the `DataFrame` `df`, that we saved the data in, has a shape attribu
 
 When we loaded the previous datasets `read_csv()` assumed that the first row in our .csv file contained headers for each of the columns. If we want to load in a dataset that does not contain a header row we can tell `read_csv()` that there is no header by setting `header=None`.
 
-```Python
+~~~
 pd.read_csv("data/spending_csv_ex_noheader.csv", nrows=5, header=None)
-```
+~~~
+{: .language-python}
 
 However, this does not mean that the `DataFrame` does not have headers but rather that Pandas will set them to be an integer value. An example is shown in the figure below:
 
@@ -129,9 +145,10 @@ However, this does not mean that the `DataFrame` does not have headers but rathe
 
 You might also notice that there is also a corresponding integer number in the far left side of each row. This is the index that is essentially the "name" for each row. If we have a column that is specifies each row in the input file we can tell Pandas to use that column instead of the default of using a integer. This can be done by e.g. setting `index_col='unique_id'` however, if you don't have any headers you can also specify the column by using its integer location e.g. `index_col=0`. **Note that the integer location of a column goes from left to right and starts at 0.**
 
-```Python
+~~~
 df = pd.read_csv('data/spending_csv_ex_noheader.csv', nrows=5, index_col=0)
-```
+~~~
+{: .language-python}
 
 You can change the name of the index column by setting the index name attribute of the dataframe `df.index.name = 'unique_id'`.
 
@@ -147,9 +164,10 @@ There are often missing values in a real-world data set. These missing entries m
 
 For example, if we were to load in a .csv where missing values are 'Null' and not specify this then Pandas will load these values in as objects. To let Pandas know that we want to interpret these values as missing values we can add `na_values='Null'`.
 
-```Python
+~~~
 pd.read_csv("data/spending_csv_ex_null_values.csv", na_values='Null')
-```
+~~~
+{: .language-python}
 
 > ## Auto NaN values
 >
@@ -163,6 +181,7 @@ Now that we are familiar with the reading mechanisms that pandas has implemented
 
 `to_csv()` has a number of optional parameters that you may find useful, all of which can be found in the [pandas documentation](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html).
 
-```Python
+~~~
 df.to_csv('data/new_spending_data.csv')
-```
+~~~
+{: .language-python}
