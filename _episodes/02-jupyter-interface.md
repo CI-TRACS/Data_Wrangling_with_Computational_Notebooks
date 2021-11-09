@@ -1,6 +1,6 @@
 ---
 title: "Jupyter Notebook Interface"
-teaching: 15
+teaching: 10
 exercises: 0
 questions:
 - "How is the jupyter notebook interface setup"
@@ -88,9 +88,3 @@ Rerunning code cells is **not recommended** since it obscures what the notebook'
 The image below is a cheatsheet of some of the buttons not discussed in this episode that might be good to know for the future. Feel free to come back to it if you are confused later on.
 
 ![Notebook Cheatsheet](../fig/E2_6_cheatsheet.png)
-
-More information on the jupyter notebook can be found at these sources:
-
-- Source 1
-- Source 2
-- Source 3

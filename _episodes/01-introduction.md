@@ -1,6 +1,6 @@
 ---
 title: "Introduction"
-teaching: 15
+teaching: 10
 exercises: 0
 questions:
 - "Why are jupyter notebooks useful for cleaning and wrangling data?"
