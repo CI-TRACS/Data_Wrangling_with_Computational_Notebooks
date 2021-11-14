@@ -18,7 +18,7 @@ keypoints:
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CI-TRACS/Data_Wrangling_with_Computational_Notebooks/HEAD)
 
-The button above will take you to the associated binder website for this lesson. When you load up the binder webpage linked in the previous lesson you should be presented with a site that looks something like the image below.
+The button above will take you to the associated binder website for this lesson. When you load up the binder webpage you should be presented with a site that looks something like the image below.
 
 ![Basic Binder Webpage](../fig/E2_1_basic_binder.png)
 
@@ -26,7 +26,7 @@ This site contains a variety of buttons to create various file types. However, f
 
 1. Double click on the "notebook" directory in the file browser
    - This directory contains all the Jupyter notebooks associated with this lesson
-1. Click on the "Python 3" box beneath the Notebook label. This button is next to the arrow labeled "Create new Jupyter Notebook"
+2. Click on the "Python 3" box beneath the Notebook label. This button is next to the arrow labeled "Create new Jupyter Notebook"
    - This will create a Jupyter notebook called "Untitled.ipynb" with a single blank cell
 
 Once you click on on the Python 3 button under the notebook label you will be presented with a new screen which will look something like the image below (note that the image has been cropped to reduce space).
