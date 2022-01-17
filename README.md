@@ -16,6 +16,7 @@ This repository generates the corresponding lesson website from [The Carpentries
 **CI Tools:**
 
 - Python
+- Shell file system
 - Jupyter
 - Pandas
 
