@@ -73,7 +73,7 @@ To start off lets fix the first problem we saw which was was the large number of
 > > ~~~
 > > {: .language-python}
 > > Below shows how our `DataFrame` now looks:
-> > ![Ouput DataFrame](../fig/E6_02_nan_dataframe.png)
+> > ![Output DataFrame](../fig/E6_02_nan_dataframe.png)
 > {: .solution}
 {: .challenge}
 
