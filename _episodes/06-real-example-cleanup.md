@@ -3,11 +3,14 @@ title: "Real Example Cleaning"
 teaching: 20
 exercises: 0
 questions:
-  - ""
+  - "How do you clean an example dataset?"
+  - "How do you deal with missing data?"
+  - "How do you fix column type mismatches?"
 objectives:
-  
+  - "Clean an example dataset using both previously described concepts and some new ones"
 keypoints:
-  
+  - "Cleaning a dataset is an iterative process that can require multiple passes"
+  - "Keep in mind to restart the kernel when cleaning a dataset to make sure that your code encompasses all the cleaning needed."
 ---
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CI-TRACS/Data_Wrangling_with_Computational_Notebooks/HEAD)

@@ -3,11 +3,17 @@ title: "DataFrame Analysis"
 teaching: 20
 exercises: 0
 questions:
-  - ""
+  - "What are some common attributes for Pandas `DataFrame`s?"
+  - "What are some common methods for Pandas `DataFrame`s?"
+  - "How can you do arithmetic between two Pandas columns?"
 objectives:
-  - ""
+  - "Learn how to access `DataFrame` attributes"
+  - "Learn how to get statistics on a loaded `DataFrame`"
+  - "Learn how to sum two Pandas `DataFrame` columns together"
 keypoints:
-  
+  - "Using `.dtypes` to get the types of each column in a `DataFrame`"
+  - "To get general statistics on the DataFrame you can use the `describe` method"
+  - "You can add a constant to a numeric column by using the `column + constant`"
 ---
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CI-TRACS/Data_Wrangling_with_Computational_Notebooks/HEAD)

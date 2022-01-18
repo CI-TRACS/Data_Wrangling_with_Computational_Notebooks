@@ -3,10 +3,17 @@ title: "Real Example Analysis"
 teaching: 20
 exercises: 0
 questions:
-  - ""
+   - "How do you visualize data from a `DataFrame`?"
+   - "How do you group data by year and month?"
+   - "How do you plot multiple measurements in a single plot?"
 objectives:
-
+   - "Learn how to plot the cleaned data"
+   - "Learn how to subset and plot the data"
+   - "Learn how to using the groupby method to visualize yearly and monthly changes"
 keypoints:
+   - "Grouping data by year and months is a powerful way to identify monthly and yearly changes"
+   - "You can easily add more measurements to a single plot by using a list"
+   - "There is a lot we didn't cover here, so take a look at the Matplotlib docs ([Link to Matplotlib docs](https://matplotlib.org/)) and other libraries that can allow you to make dynamic plots e.g. Plotly ([Link to Plotly docs](https://plotly.com/graphing-libraries/))"
 ---
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CI-TRACS/Data_Wrangling_with_Computational_Notebooks/HEAD)
