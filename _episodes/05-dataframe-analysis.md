@@ -70,7 +70,7 @@ dtype: object
 > | Python Type       | Equivalent Pandas Type | Description                                                                                                       |
 > | :---------------- | :--------------------- | :---------------------------------------------------------------------------------------------------------------- |
 > | `string or mixed` | `object`               | Columns contain partially or completely made up from strings                                                      |
-> | `int`             | `int64`                | Columns with numeric (inetger) values. The 64 here refers <br/>to size of the memory space allocated to this type |
+> | `int`             | `int64`                | Columns with numeric (integer) values. The 64 here refers <br/>to size of the memory space allocated to this type |
 > | `float`           | `float64`              | Columns with floating points numbers (numbers with decimal points)                                                |
 > | `bool`            | `bool`                 | True/False values                                                                                                 |
 > | `datetime`        | `datetime`             | Date and/or time values                                                                                                   |

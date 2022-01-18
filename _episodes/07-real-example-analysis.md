@@ -94,7 +94,7 @@ To start off we can focus on the measurements that we have plenty of data for.
 >
 > We can quickly get a matplotlib visualization for temperature by calling the `plot` method from our `DataFrame`. We can tell it what columns we want to use as the x axis and y axis via the parameters `x` and `y`. The `kind` parameter lets the `plot()` method know what kind of plot we want e.g. line or scatter. For more information about the plot function check out the docs ([Link to plot method docs](https://pandas.pydata.org/docs/reference/api/pandas.DataFrame.plot.html)).
 > ~~~
-> df.plot(x="date", y="temp ITS-90", kind="scatter")
+> df.plot(x="date", y="temp ITS-90", kind="line")
 > ~~~
 > {: .language-python}
 > > ## Solution
@@ -110,7 +110,7 @@ However, the plot we get is very messy. We see a lot of variation from around 25
 > Part of the reason we got this messy plot is because we are utilizing all the temperature values in our dataset, regardless of depth (i.e. pressure). To resolve some of the variation we can ask Pandas to only plot data that is from roughly the top 100m of the water column this would be roughly any rows that come from pressures of less than 100 dbar.
 > ```
 > surface_samples = df[df["press dbar"] < 100]
-> surface_samples.plot(x="date", y="temp ITS-90", kind="scatter")
+> surface_samples.plot(x="date", y="temp ITS-90", kind="line")
 > ```
 > {: .language-python}
 > > ## Solution

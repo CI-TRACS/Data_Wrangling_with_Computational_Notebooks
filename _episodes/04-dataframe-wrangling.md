@@ -7,9 +7,12 @@ questions:
   - "How can you subset a `DataFrame`?"
   - "How can you sort a `DataFrame`?"
 objectives:
-  
+  - "Learn how to select specific columns or rows from a `DataFrame`"
+  - "Learn how to select rows based on conditions"
+  - "Learn how to sort a `DataFrame`'s rows or columns"
 keypoints:
-  
+  - "Select columns by using `[\"column name\"]` or rows by using the `loc` attribute"
+  - "Sort based on values in a column by using the `sort_values` method"
 ---
 
 [![Binder](https://mybinder.org/badge_logo.svg)](https://mybinder.org/v2/gh/CI-TRACS/Data_Wrangling_with_Computational_Notebooks/HEAD)
@@ -209,7 +212,7 @@ Sample-5         40610       360.1      11.3636      34.1709         203.5    Na
 ~~~
 {: .output}
 
-It might seem strange that we don't need to use `.loc` or `.iloc` despite the fact that we are selecting rows. This is due to the fact that the output of `df['Depth Zone'] == 'SRF'` is a Pandas `Series` that contains information on the row and Pandas inherently assumes that when it is passed a boolean list like this that we want to select those rows that are `True`. A graphic example of this is shown below.
+It might seem strange that we don't need to use `.loc` or `.iloc` despite the fact that we are selecting rows. This is due to the fact that the output of `df['press dbar'] < 380` is a Pandas `Series` that contains information on the row and Pandas inherently assumes that when it is passed a boolean list like this that we want to select those rows that are `True`. A graphic example of this is shown below.
 
 ![Filter DataFrame](../fig/E4_2_filter_dataframe.png)
 
