@@ -56,7 +56,7 @@ Name: ph, dtype: float64
 ~~~
 {: .output}
 
-We can also subset using the number of the column so if (counting from left to right and starting at 0) 'ph' is column number 3 we can instead do `df[3]`. Using this method is especially helpful if we want to subset more than just a single column. If we wanted to also include 'Longitude' (which is column number 4) we can use `df[3:4]`.
+
 
 ### Selecting Rows
 
