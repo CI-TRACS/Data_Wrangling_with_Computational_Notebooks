@@ -161,7 +161,7 @@ Comparison operations ("<" , ">" , "==" , ">=" , "<=" , "!=") can be applied to 
 
 To start let focus on a single `DataFrame` to better understand how comparison operations work in Pandas. As an example lets say that we have a `DataFrame` like the one below stored in `df`:
 
-If we wanted to identify which of the above samples come from the 'SRF' depth-zone we start by comparing that column to the `String` "SRF". We do this by first telling pandas that we want to compare the column "Depth-Zone" with the `String` 'SRF'.
+If we wanted to identify which of the above samples come from a depth above 380 we start by finding  column 'press dbar' using a less than condition of 380. 
 
 ~~~
 df['press dbar'] < 380
@@ -184,7 +184,7 @@ Name: press dbar, dtype: bool
 ~~~
 {: .output}
 
-We can see that the first row and the last row are both `True` while the remaining rows are `False` and a quick look at the original data confirms that this is correct based on our condition. However, looking back at the original `DataFrame` is very tedious. If we instead want to view/save the rows that were found to have a 'Depth-Zone' of 'SRF' we can either save the output `Series` to a variable and use that or directly place the previously used code within a bracket. Both methods are equivalent and shown below.
+We can see that the first row and the last row are both `True` while the remaining rows are `False` and a quick look at the original data confirms that this is correct based on our condition. However, looking back at the original `DataFrame` is very tedious. If we instead want to view/save the rows that were found to have a depth < 380 we can either save the output `Series` to a variable and use that or directly place the previously used code within a bracket. Both methods are equivalent and shown below.
 
 ~~~
 good_rows = df['press dbar'] < 380
