@@ -155,7 +155,7 @@ Name: Sample-1, dtype: float64
 
 ## Subsetting
 
-Comparison operations ("<" , ">" , "==" , ">=" , "<=" , "<>" , "!=") can be applied to pandas `Series` and `DataFrame`s in the same vectorized fashion as arithmetic operations except the returned object is a `Series` or `DataFrame` of booleans (either `True` or `False`).
+Comparison operations ("<" , ">" , "==" , ">=" , "<=" , "!=") can be applied to pandas `Series` and `DataFrame`s in the same vectorized fashion as arithmetic operations except the returned object is a `Series` or `DataFrame` of booleans (either `True` or `False`).
 
 ### Within a Single `DataFrame`
 
