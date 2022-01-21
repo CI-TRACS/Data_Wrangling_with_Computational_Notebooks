@@ -1,7 +1,7 @@
 ---
 title: "Real Example Cleaning"
-teaching: 20
-exercises: 0
+teaching: 10
+exercises: 10
 questions:
   - "How do you clean an example dataset?"
   - "How do you deal with missing data?"

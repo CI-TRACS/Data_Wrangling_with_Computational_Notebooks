@@ -1,7 +1,7 @@
 ---
 title: "Real Example Analysis"
-teaching: 20
-exercises: 0
+teaching: 10
+exercises: 10
 questions:
    - "How do you visualize data from a `DataFrame`?"
    - "How do you group data by year and month?"

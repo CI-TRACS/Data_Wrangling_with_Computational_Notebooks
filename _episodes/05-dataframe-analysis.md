@@ -26,13 +26,14 @@ Once you have loaded in one or more `DataFrame`s you may want to investigate var
 
 It is often useful to quickly explore some of the descriptive attributes and statistics of the dataset that you are working with. For instance, the shape and datatypes of the DataFrame, and the range, mean, standard deviation, etc. of the rows or columns. You may find interesting patterns or possibly catch errors in your dataset this way. As we will see, accessing these attributes and computing the descriptive statistics is easy with pandas.
 
-`DataFrames` have a number of attributes associated with them. With respect to exploring your dataset, perhaps the 3 most useful attributes are summarized in the table below:
+`DataFrames` have a number of attributes associated with them. With respect to exploring your dataset, perhaps the 4 most useful attributes are summarized in the table below:
 
 | Attribute |Description|
 |:----------|-----------|
-| `shape`| Return a tuple representing the dimensionality of the DataFrame. |
-| `size` | Return an int representing the number of elements in this object.  |
-| `dtypes` | Return the dtypes in the DataFrame. |
+| `shape`| Returns a tuple representing the dimensionality of the `DataFrame`. |
+| `size` | Returns an int representing the number of elements in this object.  |
+| `dtypes` | Returns the data types in the `DataFrame`. |
+| `columns` | Returns a `Series` of the header names from the `DataFrame`|
 
 A list of all the `DataFrame` attributes can be found on the pandas website ([Link to `DataFrame` Docs](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.html)).
 
@@ -40,7 +41,23 @@ A list of all the `DataFrame` attributes can be found on the pandas website ([Li
 
 `DataFrame` types are important since they will determine what methods can be used. For example you can't compute the mean of a Object column that contains strings (i.e. words).
 
-Luckily, there is a quick and easy way to see the types of all columns inside a `DataFrame` by accessing its `dtypes` attribute. `dtypes` is a series maintained by each `DataFrame` that contains the data type for each column inside a `DataFrame`. As an example if we want to access the `dtypes` attribute the `DataFrame` called `df` (seen below) we can access the `dtypes` of the `DataFrame`.
+One attribute that we have already used previously was the columns attribute that returns the name of each column header
+
+~~~
+df.columns
+~~~
+{: .language-python}
+
+That returns:
+
+~~~
+Index(['Sample ID', 'date mmddyy', 'press dbar', 'temp ITS-90', 'csal PSS-78',
+       'coxy umol/kg', 'ph'],
+      dtype='object')
+~~~
+{: .output}
+
+However, what if we wanted to see the data type associated with each column header? Luckily, there is a quick and easy way to do this by accessing the `dtypes` attribute. `dtypes` is a series maintained by each `DataFrame` that contains the data type for each column inside a `DataFrame`. As an example if we want to access the `dtypes` attribute the `DataFrame` called `df` (seen below) we can access the `dtypes` of the `DataFrame`.
 
 ![Types Dataframe](../fig/E5_1_types_dataframe.png)
 
@@ -151,10 +168,10 @@ Some of these we have already dealt with e.g. `value_counts()` while others are 
 
 The `mean()` method calculates the mean for an axis (rows = 0, columns = 1). As an example let's return to our previous `DataFrame` `df`.
 
-If we want to find the mean of the all of our numeric columns we would give the following command
+If we want to find the mean of all of our numeric columns we would give the following command
 
 ~~~
-df.mean()
+df.mean(numeric_only=True)
 ~~~
 {: .language-python}
 
@@ -194,25 +211,38 @@ A method that is a bit more tricky to understand is the `describe()` method. Thi
 {: .callout}
 
 ~~~
-df.describe(include='all')
+df.describe(include='all', datetime_is_numeric=True)
 ~~~
 {: .language-python}
 
 We would get the output:
 
 ~~~
-       Sample ID  date mmddyy  press dbar  temp ITS-90  csal PSS-78  coxy umol/kg        ph
-count          8          8.0    8.000000     8.000000     8.000000      7.000000  3.000000
-unique         8          NaN         NaN          NaN          NaN           NaN       NaN
-top     Sample-4          NaN         NaN          NaN          NaN           NaN       NaN
-freq           1          NaN         NaN          NaN          NaN           NaN       NaN
-mean         NaN      40610.0  358.562500    12.196838    34.311013    176.971429  7.742333
-std          NaN          0.0   83.905762     3.853666     0.353064     32.726376  0.229827
-min          NaN      40610.0  239.800000     7.146400    34.042400    110.700000  7.496000
-25%          NaN      40610.0  310.250000     9.995125    34.095400    173.650000  7.638000
-50%          NaN      40610.0  350.700000    11.665050    34.179650    191.300000  7.780000
-75%          NaN      40610.0  399.675000    13.757050    34.338200    193.000000  7.865500
-max          NaN      40610.0  497.800000    18.962500    35.063600    203.500000  7.951000
+       Sample ID  press dbar  temp ITS-90  csal PSS-78  coxy umol/kg  \
+count          8    8.000000     8.000000     8.000000      7.000000   
+unique         8         NaN          NaN          NaN           NaN   
+top     Sample-1         NaN          NaN          NaN           NaN   
+freq           1         NaN          NaN          NaN           NaN   
+mean         NaN  358.562500    12.196838    34.311013    176.971429   
+min          NaN  239.800000     7.146400    34.042400    110.700000   
+25%          NaN  310.250000     9.995125    34.095400    173.650000   
+50%          NaN  350.700000    11.665050    34.179650    191.300000   
+75%          NaN  399.675000    13.757050    34.338200    193.000000   
+max          NaN  497.800000    18.962500    35.063600    203.500000   
+std          NaN   83.905762     3.853666     0.353064     32.726376   
+
+              ph                 date  
+count   3.000000                    8  
+unique       NaN                  NaN  
+top          NaN                  NaN  
+freq         NaN                  NaN  
+mean    7.742333  2010-04-06 00:00:00  
+min     7.496000  2010-04-06 00:00:00  
+25%     7.638000  2010-04-06 00:00:00  
+50%     7.780000  2010-04-06 00:00:00  
+75%     7.865500  2010-04-06 00:00:00  
+max     7.951000  2010-04-06 00:00:00  
+std     0.229827                  NaN  
 ~~~
 {: .output}
 
@@ -239,7 +269,7 @@ In our notebook we would get a `Series` as our output:
 A    100.0
 C      NaN
 D      NaN
-T     17.0
+T     18.0
 X      NaN
 Name: AA, dtype: float64
 ~~~
@@ -269,7 +299,7 @@ You would get the output:
 ~~~
 A    79.3
 C     2.3
-T    12.3
+T    13.3
 X    21.3
 Name: AA, dtype: float64
 ~~~
