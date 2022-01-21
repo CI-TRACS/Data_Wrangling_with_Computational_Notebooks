@@ -178,12 +178,11 @@ df.mean(numeric_only=True)
 This will produce the output:
 
 ~~~
-date mmddyy     40610.000000
-press dbar        358.562500
-temp ITS-90        12.196838
-csal PSS-78        34.311013
-coxy umol/kg      176.971429
-ph                  7.742333
+press dbar      358.562500
+temp ITS-90      12.196838
+csal PSS-78      34.311013
+coxy umol/kg    176.971429
+ph                7.742333
 dtype: float64
 ~~~
 {: .output}
