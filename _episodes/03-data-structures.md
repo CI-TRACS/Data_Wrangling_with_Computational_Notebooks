@@ -101,19 +101,19 @@ Included in the Pandas toolkit is a [collection](https://pandas.pydata.org/panda
 
 However, parsing plain text files can become a complicated procedure. To aid in the process, Pandas provides a lot of optional parameters that may be set when calling the `read_csv()` function. To learn more, see the `read_csv()` [documentation](https://pandas.pydata.org/docs/reference/api/pandas.read_csv.html), which summarizes all of the parameters. We will be covering many of the most important parameters throughout the rest of this lesson.
 
-By default `read_csv()` will separate data entries when it encounters a comma and will separate rows by new lines encoded by '\n'. If we wanted to change this behavior so that `read_csv()` separates by tabs (encoded with \t), then we can set the optional parameter `sep = '\t'`. For instance, if we wanted to read the data in the file 'spending_csv_ex.tsv', which is a tab separated values file, and save the data in a Pandas `DataFrame` called `df`, then we would type:
+By default `read_csv()` will separate data entries when it encounters a comma and will separate rows by new lines encoded by '\n'. If we wanted to change this behavior so that `read_csv()` separates by tabs (encoded with \t), then we can set the optional parameter `sep = '\t'`. For instance, if we wanted to read the data in the file 'tsv_example.tsv', which is a tab separated values file, and save the data in a Pandas `DataFrame` called `df`, then we would type:
 
 ~~~
-df = pd.read_csv('Data/spending_csv_ex.tsv', sep='\t')
+df = pd.read_csv('data/tsv_example.tsv', sep='\t')
 ~~~
 {: .language-python}
 
 Though `read_csv()` can handle `.tsv` files, there is a specific parsing function for `.tsv` files: `read_table()`. The difference between `read_table()` and `read_csv()` is that the default behavior for the latter is to separate using commas instead of tabs `\t`. The `read_table()` documentation is available at this [link](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.read_table.html).
 
-To perform the same operation (that is reading the data in the file `spending_csv_ex.tsv` and save the data in a Pandas `DataFrame` called `df`), we may use the `read_table()` function without having to define our delimiter, since the default parameters will correctly parse our file.
+To perform the same operation (that is reading the data in the file `tsv_exampletsv` and save the data in a Pandas `DataFrame` called `df`), we may use the `read_table()` function without having to define our delimiter, since the default parameters will correctly parse our file.
 
 ~~~
-df = pd.read_table('Data/spending_csv_ex.tsv')
+df = pd.read_table('data/tsv_example.tsv')
 ~~~
 {: .language-python}
 
@@ -126,7 +126,7 @@ In the previous examples we loaded the entire dataset from the file we gave Pand
 To load only up to a limited number of rows we can use the `nrows` parameter for both `read_table()` and `read_csv()`. For example, the file E3_tara_w1.csv is a csv file with over 200 rows, but if we wanted to read only the first 5 rows of this file we can call the Pandas `read_csv()` function and set `nrows = 5`:
 
 ~~~
-df = pd.read_csv('data/spending_csv_ex.csv', nrows=5)
+df = pd.read_csv('data/tsv_example.tsv', nrows=5)
 df.shape # Returns the number of rows and columns of the DataFrame 'df' (rows, columns)
 ~~~
 {: .language-python}
